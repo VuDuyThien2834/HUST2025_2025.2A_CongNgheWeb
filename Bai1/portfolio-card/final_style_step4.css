@@ -1,0 +1,268 @@
+:root {
+    --bg-black: #000000;
+    --card-black: #161616;
+    --cobalt-blue: #0047AB;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-black);
+    color: var(--white);
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ==========================================================================
+   CẤU HÌNH MẶC ĐỊNH CHO MOBILE (Chia 4 phần - 25vh)
+   ========================================================================== */
+
+.section-1 {
+    height: 25vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.title-row-1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    height: 40%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.highlight {
+    color: var(--cobalt-blue);
+    margin-left: 10px;
+}
+
+.title-row-2 {
+    font-size: 1.75rem;
+    font-weight: bold;
+    height: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* TẦNG 2: Avatar (Căn giữa 1/2) */
+.section-2 {
+    height: 25vh;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    position: relative;
+}
+
+.avatar-wrapper {
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar-img {
+    height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+/* TẦNG 3: Major & Skills (Trục căn trái mốc 1/4 từ bên trái sang) */
+.section-3 {
+    height: 25vh;
+    display: flex;
+    align-items: center;
+    padding-left: 5%; 
+}
+
+.info-content {
+    text-align: left;
+    width: 100%;
+}
+
+.major-text {
+    font-weight: bold;
+    color: var(--cobalt-blue);
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+}
+
+/* MOBILE: Đóng vai trò là dòng nằm ngang chứa 2 box song song */
+.skills-container {
+    display: flex;
+    flex-direction: row; /* Để song song trên mobile */
+    gap: 35px;
+}
+
+.skill-box h3 {
+    font-size: 0.8rem;
+    color: #888;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.skill-box ul {
+    list-style: disc;
+    margin-left: 15px;
+}
+
+.skill-box li {
+    font-size: 0.9rem;
+    color: #e0e0e0;
+    margin-bottom: 2px;
+}
+
+/* TẦNG 4: Icon liên hệ */
+.section-4 {
+    height: 25vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.contact-card {
+    background-color: var(--card-black);
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: var(--white);
+}
+
+.contact-item i {
+    font-size: 1.5rem;
+    color: var(--cobalt-blue);
+    margin-bottom: 8px;
+}
+
+.contact-item span {
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+
+/* ==========================================================================
+   CẤU HÌNH CHO DESKTOP (Màn hình lớn từ 769px trở lên - Chia 3 phần)
+   ========================================================================== */
+@media (min-width: 769px) {
+    body {
+        overflow: hidden;
+    }
+
+    .title-row-1 { font-size: 4.5rem; }
+    .title-row-2 { font-size: 3rem; }
+
+    /* Phần 1 chiếm 1/3 chiều cao */
+    .section-1 {
+        height: 33.33vh;
+    }
+
+    /* Phần 2 chiếm 1/3 chiều cao */
+    .section-2 {
+        height: 33.33vh;
+        justify-content: flex-start;
+    }
+
+    /* Trục giữa ảnh trùng trục dọc 1/3 tính từ bên phải sang (66.66% từ trái sang) */
+    .avatar-wrapper {
+        position: absolute;
+        height: 100%;
+        left: 66.66%;
+        transform: translateX(-50%);
+    }
+
+    .avatar-img {
+        height: 95%;
+        border-radius: 20px;
+        object-fit: cover;
+    }
+
+    /* Đẩy tầng 3 đè lên vị trí hàng ngang của tầng 2 */
+    .section-3 {
+        height: 0;
+        position: relative;
+        padding-left: 0;
+    }
+
+    .section-3 .info-content {
+        position: absolute;
+        bottom: -20px; /* Cân đối chiều cao với khối ảnh kế bên */
+        /* Trục căn trái trùng trục dọc 1/4 chiều ngang tính từ trái sang (25%) */
+        left: 25%; 
+        width: auto;
+    }
+
+    .major-text {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+    }
+
+    /* DESKTOP: Bẻ hướng xoay dọc thành 2 tầng trên-dưới để chống tràn đè vào ảnh */
+    .skills-container {
+        flex-direction: column; 
+        gap: 15px;
+    }
+
+    .skill-box h3 {
+        font-size: 0.9rem;
+        margin-bottom: 6px;
+    }
+
+    .skill-box li {
+        font-size: 1rem;
+        margin-bottom: 4px;
+    }
+
+    /* Phần 4 chiếm 1/3 chiều cao cuối */
+    .section-4 {
+        height: 33.33vh;
+    }
+
+    .contact-card {
+        max-width: 850px;
+        padding: 35px;
+        border-radius: 30px;
+    }
+
+    .contact-item i {
+        font-size: 2rem;
+        margin-bottom: 12px;
+    }
+
+    .contact-item span {
+        font-size: 0.9rem;
+    }
+    
+    .contact-item:hover {
+        transform: translateY(-8px);
+        transition: transform 0.2s ease;
+    }
+}

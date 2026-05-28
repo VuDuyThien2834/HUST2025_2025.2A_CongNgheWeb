@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VP-Rice - Cơm Văn Phòng Đặt Trước</title>
+    <link rel="stylesheet" href="style_step1.css">
+    <!-- FontAwesome dùng để load các icon Phone, Facebook, Google Play, AppStore -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- 1.1 & 2.1 BLOCK PHƯƠNG THỨC LIÊN LẠC (Cao 1cm, Màu xanh cobalt, full trang) -->
+    <div class="top-contact-bar">
+        <div class="contact-inner">
+            <a href="tel:0355000000" class="contact-link">
+                <i class="fa-solid fa-phone"></i> <span>0355 000 000</span>
+            </a>
+            <a href="https://facebook.com" target="_blank" class="contact-link">
+                <i class="fa-brands fa-facebook"></i> <span>fb.com/vprice</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- THƯƠNG HIỆU SẢN PHẨM & ĐẶT CƠM -->
+    <!-- Trên Desktop (1.2): Gộp chung 1 section cao 25cm. Trái chiếm 2/3 ảnh canteen, Phải chiếm 1/3 thông tin đặt cơm -->
+    <!-- Trên Mobile (2.2 & 2.3): Tự động tách thành 2 block riêng biệt cao 5cm + 5cm -->
+    <section class="hero-section">
+        <div class="hero-left-visual">
+            <img src="canteen.webp" alt="Canteen" class="canteen-bg">
+            <div class="brand-overlay">
+                <img src="VP-Rice_logo.png" alt="VP-Rice Logo" class="brand-logo">
+                <h1 class="brand-name">VP-Rice</h1>
+            </div>
+        </div>
+
+        <div class="hero-right-action">
+            <div class="action-box">
+                <p class="txt-line1">Cơm văn phòng cho nhân viên</p>
+                <p class="txt-line2">Đặt trước suất ăn.</p>
+                <button class="btn-order-now">Đặt cơm ngay</button>
+                <div class="app-download-buttons">
+                    <button class="btn-app"><i class="fa-brands fa-google-play"></i> Google Play</button>
+                    <button class="btn-app"><i class="fa-brands fa-apple"></i> App Store</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 1.3 & 2.4 THỰC ĐƠN VÀ ĐẶT CƠM (Fill màu trắng, container bo góc viền cam) -->
+    <section class="menu-section">
+        <div class="menu-rounded-container">
+            <div class="date-picker-area">
+                <label for="order-date">Chọn ngày ăn: </label>
+                <input type="date" id="order-date">
+            </div>
+
+            <h2 class="menu-title">Thực đơn ngày <span id="selected-date-display">Hôm nay</span></h2>
+
+            <div class="menu-grid">
+                <!-- Nhóm 1: Món cơm (Desktop: 1 hàng 3 cột | Mobile: 1 khối 3 hàng dọc) -->
+                <div class="menu-group">
+                    <h3 class="category-title">Món Cơm</h3>
+                    <div class="item-list triple-columns">
+                        <div class="food-card">
+                            <img src="1_comcakho.jpg" alt="Cơm cá kho" class="food-img">
+                            <div class="food-info">
+                                <span class="food-name">Cơm cá kho</span>
+                                <span class="food-price">45.000đ</span>
+                            </div>
+                        </div>
+                        <div class="food-card">
+                            <img src="2_comduigasotchuangot.jpg" alt="Cơm đùi gà sốt chua ngọt" class="food-img">
+                            <div class="food-info">
+                                <span class="food-name">Cơm đùi gà sốt chua ngọt</span>
+                                <span class="food-price">45.000đ</span>
+                            </div>
+                        </div>
+                        <div class="food-card">
+                            <img src="3_comthikhotrung.jpg" alt="Cơm thịt kho trứng" class="food-img">
+                            <div class="food-info">
+                                <span class="food-name">Cơm thịt kho trứng</span>
+                                <span class="food-price">45.000đ</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nhóm 2: Món mì/bún (Desktop: 1 hàng 3 cột | Mobile: 1 khối 3 hàng dọc) -->
+                <div class="menu-group">
+                    <h3 class="category-title">Món Mì / Bún</h3>
+                    <div class="item-list triple-columns">
+                        <div class="food-card">
+                            <img src="4_phoxaobo.jpg" alt="Phở xào bò" class="food-img">
+                            <div class="food-info">
+                                <span class="food-name">Phở xào bò</span>
+                                <span class="food-price">40.000đ</span>
+                            </div>
+                        </div>
+                        <div class="food-card">
+                            <img src="5_bunbonambo.jpg" alt="Bún bò Nam Bộ" class="food-img">
+                            <div class="food-info">
+                                <span class="food-name">Bún bò Nam Bộ</span>
+                                <span class="food-price">40.000đ</span>
+                            </div>
+                        </div>
+                        <div class="food-card">
+                            <img src="6_bunoc.jpg" alt="Bún ốc" class="food-img">
+                            <div class="food-info">
+                                <span class="food-name">Bún ốc</span>
+                                <span class="food-price">40.000đ</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nhóm 3: Món nhẹ (Desktop: 1 hàng 4 cột | Mobile: 1 khối 4 hàng dọc) -->
+                <div class="menu-group">
+                    <h3 class="category-title">Món Ăn Nhẹ</h3>
+                    <div class="item-list quad-columns">
+                        <div class="food-card">
+                            <img src="7_banhbao.png" alt="Bánh bao" class="food-img">
+                            <div class="food-info">
+                                <span class="food-name">Bánh bao</span>
+                                <span class="food-price">15.000đ</span>
+                            </div>
+                        </div>
+                        <div class="food-card">
+                            <img src="8_banhmique.webp" alt="Bánh mì que" class="food-img">
+                            <div class="food-info">
+                                <span class="food-name">Bánh mì que</span>
+                                <span class="food-price">10.000đ</span>
+                            </div>
+                        </div>
+                        <div class="food-card">
+                            <img src="9_trungluoc.jpg" alt="Trứng luộc" class="food-img">
+                            <div class="food-info">
+                                <span class="food-name">Trứng luộc</span>
+                                <span class="food-price">5.000đ</span>
+                            </div>
+                        </div>
+                        <div class="food-card">
+                            <img src="10_xucxichchien.webp" alt="Xúc xích chiên" class="food-img">
+                            <div class="food-info">
+                                <span class="food-name">Xúc xích chiên</span>
+                                <span class="food-price">10.000đ</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="menu-note">Lưu ý: Đặt cơm trước ngày ăn.</p>
+            <div class="center-btn-wrapper">
+                <button class="btn-order-now-bottom">Đặt cơm ngay</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 1.4 & 2.5 KHÁCH HÀNG NÓI VỀ VP-Rice (Fill màu đen, chữ vàng, căn giữa) -->
+    <footer class="reviews-section">
+        <h2 class="reviews-heading">KHÁCH HÀNG NÓI VỀ VP-Rice</h2>
+        <div class="reviews-gallery">
+            <img src="review1.webp" alt="Review khách hàng 1" class="review-img">
+            <img src="review2.webp" alt="Review khách hàng 2" class="review-img">
+            <img src="review3.webp" alt="Review khách hàng 3" class="review-img">
+        </div>
+    </footer>
+
+    <!-- Logic tự động điền ngày hiện tại và cập nhật tiêu đề khi đổi ngày -->
+    <script>
+        const dateInput = document.getElementById('order-date');
+        const dateDisplay = document.getElementById('selected-date-display');
+        
+        // Thiết lập ngày mặc định là hôm nay theo múi giờ Việt Nam
+        const today = new Date();
+        const yyyy = today.getFullYear();
+        let mm = today.getMonth() + 1; 
+        let dd = today.getDate();
+        
+        if (dd < 10) dd = '0' + dd;
+        if (mm < 10) mm = '0' + mm;
+        
+        const formattedToday = dd + '/' + mm + '/' + yyyy;
+        const htmlDateValue = yyyy + '-' + mm + '-' + dd;
+        
+        dateInput.value = htmlDateValue;
+        dateDisplay.innerText = formattedToday;
+
+        // Bắt sự kiện thay đổi ngày ăn
+        dateInput.addEventListener('change', (e) => {
+            if(e.target.value) {
+                const parts = e.target.value.split('-');
+                dateDisplay.innerText = parts[2] + '/' + parts[1] + '/' + parts[0];
+            }
+        });
+    </script>
+</body>
+</html>

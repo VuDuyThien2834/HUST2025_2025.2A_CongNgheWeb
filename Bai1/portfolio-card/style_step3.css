@@ -1,0 +1,262 @@
+:root {
+    --bg-black: #000000;
+    --card-black: #161616; /* Màu đen nhạt hơn nền cho card liên hệ */
+    --cobalt-blue: #0047AB;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-black);
+    color: var(--white);
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ==========================================================================
+   CẤU HÌNH MẶC ĐỊNH CHO MOBILE (Ưu tiên Mobile-First để không bị lỗi layout)
+   Chia màn hình làm 4 phần bằng nhau (Mỗi phần 25vh)
+   ========================================================================== */
+
+/* TẦNG 1: Tiêu đề */
+.section-1 {
+    height: 25vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.title-row-1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    height: 40%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.highlight {
+    color: var(--cobalt-blue);
+    margin-left: 10px;
+}
+
+.title-row-2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    height: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* TẦNG 2: Nơi để Avatar */
+.section-2 {
+    height: 25vh;
+    display: flex;
+    justify-content: center; /* Trục giữa ảnh trùng trục dọc 1/2 màn hình mobile */
+    align-items: center;
+    position: relative;
+}
+
+.avatar-wrapper {
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar-img {
+    height: 100%;
+    max-width: 100%;
+    object-fit: contain; /* Phù hợp hoàn hảo cho ảnh transparent */
+}
+
+/* TẦNG 3: Major và Skills */
+.section-3 {
+    height: 25vh;
+    display: flex;
+    align-items: center;
+    /* Trục căn trái trùng với trục dọc 1/4 chiều ngang (25% từ trái sang) */
+    padding-left: 5%; 
+}
+
+.info-content {
+    text-align: left;
+}
+
+.major-text {
+    font-weight: bold;
+    color: var(--cobalt-blue);
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.skills-container {
+    display: flex;
+    gap: 30px;
+}
+
+.skill-group h3 {
+    font-size: 0.8rem;
+    color: #888;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+}
+
+.skill-group ul {
+    list-style: disc;
+    margin-left: 15px;
+}
+
+.skill-group li {
+    font-size: 0.9rem;
+    color: #e0e0e0;
+    margin-bottom: 2px;
+}
+
+/* TẦNG 4: Icon liên hệ */
+.section-4 {
+    height: 25vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.contact-card {
+    background-color: var(--card-black);
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 20px; /* Rounded rectangle */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: var(--white);
+}
+
+.contact-item i {
+    font-size: 1.5rem;
+    color: var(--cobalt-blue);
+    margin-bottom: 8px;
+}
+
+.contact-item span {
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+
+/* ==========================================================================
+   CẤU HÌNH CHO DESKTOP (Màn hình lớn từ 769px trở lên)
+   Tự động gộp và chia chiều cao thành 3 phần bằng nhau (Mỗi phần 33.33vh)
+   ========================================================================== */
+@media (min-width: 769px) {
+    body {
+        overflow: hidden; /* Cố định màn hình desktop không cho cuộn */
+    }
+
+    /* Đổi kích thước chữ lớn hơn trên Desktop */
+    .title-row-1 { font-size: 4.5rem; }
+    .title-row-2 { font-size: 3rem; }
+
+    /* Phần 1 chiếm đúng 1/3 chiều cao */
+    .section-1 {
+        height: 33.33vh;
+    }
+
+    /* Đưa tầng 2 và tầng 3 gộp chung vào 1 hàng ngang của Desktop */
+    .section-2 {
+        height: 33.33vh;
+        justify-content: flex-start; /* Reset lại để dùng vị trí tuyệt đối */
+    }
+
+    /* Định vị tuyệt đối Avatar: trục giữa ảnh trùng trục dọc 1/3 tính từ phải sang (tức là 66.66% từ trái sang) */
+    .avatar-wrapper {
+        position: absolute;
+        height: 100%;
+        left: 66.66%;
+        transform: translateX(-50%);
+    }
+
+    .avatar-img {
+        height: 95%;
+        border-radius: 20px; /* Desktop có thể dùng ảnh vuông góc bo tròn cho sang */
+        object-fit: cover;
+    }
+
+    /* Đẩy toàn bộ khối thông tin Tầng 3 đè lên vị trí hàng ngang của Tầng 2 trên Desktop */
+    .section-3 {
+        height: 0; /* Triệt tiêu chiều cao chiếm chỗ dòng */
+        position: relative;
+        padding-left: 0;
+    }
+
+    .section-3 .info-content {
+        position: absolute;
+        bottom: 40px; /* Đẩy lên song song với khu vực avatar */
+        /* Trục căn trái trùng trục dọc 1/4 chiều ngang tính từ trái sang (tức là 25%) */
+        left: 25%; 
+    }
+
+    .major-text {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+    }
+
+    .skill-group h3 {
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+    }
+
+    .skill-group li {
+        font-size: 1rem;
+        margin-bottom: 4px;
+    }
+
+    /* Phần 4 chiếm đúng 1/3 chiều cao cuối */
+    .section-4 {
+        height: 33.33vh;
+    }
+
+    .contact-card {
+        max-width: 850px;
+        padding: 35px;
+        border-radius: 30px;
+    }
+
+    .contact-item i {
+        font-size: 2rem;
+        margin-bottom: 12px;
+    }
+
+    .contact-item span {
+        font-size: 0.9rem;
+    }
+    
+    .contact-item:hover {
+        transform: translateY(-8px);
+        transition: transform 0.2s ease;
+    }
+}

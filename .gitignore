@@ -1,0 +1,63 @@
+# =========================
+# AI model weights
+# =========================
+*.pt
+*.pth
+*.onnx
+*.engine
+*.trt
+*.bin
+*.ckpt
+*.safetensors
+*.pb
+*.ttf 
+#models/idcard_models/fonts/TrixiProRegular.ttf
+
+
+# =========================
+# OCR temp/output
+# =========================
+outputs/
+results/
+logs/
+tmp/
+cache/
+
+# =========================
+# AI OCR folder
+# =========================
+ai-ocr/
+
+# =========================
+# Python
+# =========================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+venv/
+.env
+
+# =========================
+# IDE
+# =========================
+.vscode/
+.idea/
+
+# =========================
+# OS
+# =========================
+.DS_Store
+Thumbs.db
+*.deb
+*.zip
+*.tar
+*.gz
+*.7z
+
+# =========================
+# Build
+# =========================
+build_FIS_1.9.0/
+build_FIS_1.9.2/

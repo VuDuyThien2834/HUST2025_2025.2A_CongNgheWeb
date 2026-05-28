@@ -1,0 +1,434 @@
+/* --- THIẾT LẬP CHUNG TOÀN TRANG --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --cobalt-blue: #002f6c;
+    --orange-main: #ff7a00;
+    --orange-peach: #f2b780;
+    --chartreuse: #7FFF00;    /* Màu xanh lá mạ mới cho 2 nút bấm */
+    --pure-white: #ffffff;
+    --dark-bg: #111111;
+    --gold-text: #ffd700;
+}
+
+body {
+    background-color: var(--pure-white);
+    overflow-x: hidden;
+}
+
+/* 1.1 & 2.1 BLOCK PHƯƠNG THỨC LIÊN LẠC (Căn giữa hoàn toàn) */
+.top-contact-bar {
+    width: 100%;
+    height: 1cm;
+    background-color: var(--cobalt-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Căn giữa nội dung bên trong */
+}
+
+.contact-inner {
+    display: flex;
+    gap: 40px;
+}
+
+.contact-link {
+    color: var(--pure-white);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* ==========================================================================
+   CONFIG CHO MÀN HÌNH DESKTOP
+   ========================================================================== */
+
+/* 1.2 THƯƠNG HIỆU SẢN PHẨM */
+.hero-section {
+    width: 100%;
+    height: 25cm;
+    background-color: var(--orange-peach);
+    display: flex;
+}
+
+.hero-left-visual {
+    width: 66.66%;
+    height: 100%;
+    position: relative;
+}
+
+.canteen-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Định vị Logo mới */
+.brand-overlay {
+    position: relative;
+    top: 15%;
+    left: -10%;
+}
+
+/* Phóng to logo lên gấp đôi kích thước cũ */
+.brand-logo {
+    width: 480px; 
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(2px 4px 10px rgba(0,0,0,0.3));
+}
+
+.hero-right-action {
+    width: 33.33%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.action-box {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    color: var(--pure-white);
+    width: 100%;
+    max-width: 380px;
+}
+
+/* Tạo bullet list đồng bộ kiểu font chữ */
+.intro-bullet-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.intro-bullet-list li {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: var(--pure-white);
+    line-height: 1.3;
+}
+
+/* Button 1: Đặt cơm ngay (Đổi sang màu xanh lá mạ, chữ đen để dễ đọc) */
+.btn-order-now {
+    background-color: var(--chartreuse);
+    color: #000000;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    width: fit-content;
+}
+
+.btn-order-now:hover {
+    transform: scale(1.05);
+}
+
+/* Khối bo góc cài đặt app mới (Rounded rectangle) */
+.app-download-box {
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.app-box-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: center;
+    color: var(--pure-white);
+}
+
+.app-buttons-group {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+.btn-app {
+    background-color: #000000;
+    color: var(--pure-white);
+    border: 1px solid #333;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* 1.3 THỰC ĐƠN VÀ ĐẶT CƠM */
+.menu-section {
+    width: 100%;
+    padding: 60px 5%;
+}
+
+.menu-rounded-container {
+    border: 4px solid var(--orange-main);
+    border-radius: 24px;
+    padding: 40px;
+}
+
+.date-picker-area {
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.date-picker-area input {
+    padding: 8px 12px;
+    border: 2px solid var(--orange-main);
+    border-radius: 6px;
+    outline: none;
+}
+
+.menu-title {
+    font-size: 2rem;
+    color: var(--orange-main);
+    margin-bottom: 35px;
+}
+
+.menu-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.category-title {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    color: #333;
+    border-left: 5px solid var(--orange-main);
+    padding-left: 10px;
+}
+
+.item-list {
+    display: grid;
+    gap: 25px;
+}
+
+.triple-columns { grid-template-columns: repeat(3, 1fr); }
+.quad-columns { grid-template-columns: repeat(4, 1fr); }
+
+.food-card {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fdfdfd;
+}
+
+.food-img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+}
+
+.food-info {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.food-name {
+    font-weight: bold;
+    color: #222;
+    font-size: 1.1rem;
+}
+
+.food-price {
+    color: #d9383a;
+    font-weight: 700;
+}
+
+.menu-note {
+    color: #ff3333;
+    font-weight: bold;
+    text-align: center;
+    margin: 40px 0 20px 0;
+    font-size: 1.1rem;
+}
+
+.center-btn-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+/* Button 2: Đặt cơm ngay ở dưới cùng (Đổi sang màu xanh lá mạ giống hệt nút trên) */
+.btn-order-now-bottom {
+    background-color: var(--chartreuse);
+    color: #000000;
+    border: none;
+    padding: 15px 60px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.btn-order-now-bottom:hover {
+    transform: scale(1.05);
+}
+
+/* 1.4 KHÁCH HÀNG NÓI VỀ VP-Rice (Bố cục chiếm full chiều ngang cho Desktop) */
+.reviews-section {
+    background-color: var(--dark-bg);
+    padding: 60px 40px; /* Thu hẹp padding hai bên */
+    text-align: center;
+    width: 100%;
+}
+
+.reviews-heading {
+    color: var(--gold-text);
+    margin-bottom: 40px;
+    font-size: 2rem;
+}
+
+.reviews-gallery {
+    display: flex;
+    justify-content: space-between; /* Giúp phân bổ đều trên toàn bộ trục ngang */
+    width: 100%;
+    gap: 2cm; /* Các ảnh cách nhau chuẩn xác 2cm */
+}
+
+.review-img {
+    flex: 1; /* Ép cả 3 ảnh tự động giãn rộng ra chiếm hết trục ngang */
+    height: 350px; /* Tăng chiều cao để tương xứng với độ rộng full màn hình */
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+
+/* ==========================================================================
+   CONFIG RESPONSIVE CHO MOBILE (Dưới 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .top-contact-bar {
+        height: 1cm;
+    }
+    
+    .contact-inner {
+        gap: 20px;
+    }
+
+    .hero-section {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .hero-left-visual {
+        width: 100%;
+        height: 5cm;
+    }
+
+    /* Định vị lại logo phóng to trên mobile tại mốc (1cm, 1cm) */
+    .brand-overlay {
+        position: absolute;
+        top: 27.5%;
+        left: -10%;
+    }
+
+    .brand-logo {
+        width: 200px;
+    }
+
+    .hero-right-action {
+        width: 100%;
+        height: 6cm;
+        padding: 20px;
+    }
+
+    .action-box {
+        gap: 15px;
+        align-items: center;
+    }
+
+    .intro-bullet-list {
+        padding-left: 100px;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .intro-bullet-list li {
+        font-size: 1.1rem;
+        text-align: left;
+    }
+
+    .btn-order-now {
+        padding: 10px 30px;
+        font-size: 1rem;
+    }
+
+    .app-download-box {
+        padding: 10px 15px;
+        gap: 8px;
+        border-radius: 14px;
+        width: 100%;
+    }
+
+    .app-box-title {
+        font-size: 0.95rem;
+    }
+
+    .btn-app {
+        padding: 6px 12px;
+        font-size: 0.75rem;
+    }
+
+    /* Thực đơn di động */
+    .item-list.triple-columns, 
+    .item-list.quad-columns {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .food-card {
+        display: flex;
+        flex-direction: row;
+        height: 80px;
+    }
+
+    .food-img {
+        width: 90px;
+        height: 100%;
+    }
+
+    .food-info {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0 15px;
+        align-items: center;
+    }
+
+    /* Đánh giá di động (Giữ khoảng cách 1cm dọc như yêu cầu trước) */
+    .reviews-gallery {
+        flex-direction: column;
+        gap: 1cm;
+    }
+
+    .review-img {
+        width: 100%;
+        height: 220px;
+    }
+}

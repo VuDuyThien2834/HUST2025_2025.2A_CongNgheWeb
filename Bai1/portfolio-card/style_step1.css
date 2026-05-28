@@ -1,0 +1,196 @@
+/* --- Khởi tạo cơ bản & Biến màu sắc --- */
+:root {
+    --bg-gradient: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* Màu nền tổng thể */
+    --card-bg: #ffffff;
+    --primary-blue: #1e3c72;   /* Xanh dương đậm sang trọng */
+    --secondary-blue: #2a5298; /* Xanh dương vừa cho các điểm nhấn */
+    --light-blue: #eef2f7;     /* Xanh dương siêu nhạt làm nền cụm skill */
+    --text-dark: #2c3e50;
+    --text-muted: #7f8c8d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: var(--bg-gradient);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* --- Khung Card Tổng Thể (Desktop mặc định) --- */
+.card-container {
+    background: var(--card-bg);
+    width: 450px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* --- Header Card (Background xanh & Avatar) --- */
+.card-header {
+    background: linear-gradient(to right, var(--primary-blue), var(--secondary-blue));
+    height: 140px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #ffffff;
+    position: absolute;
+    bottom: -65px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    background-color: #fff;
+}
+
+/* --- Body Card --- */
+.card-body {
+    padding: 85px 30px 40px 30px;
+    text-align: center;
+}
+
+.name {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary-blue);
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+}
+
+.major {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.divider {
+    border: none;
+    height: 1px;
+    background: #e0e0e0;
+    margin: 25px 0;
+}
+
+/* --- Phần Kỹ Năng (Skills) --- */
+.skills-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    text-align: left;
+}
+
+.skill-group {
+    background: var(--light-blue);
+    padding: 15px;
+    border-radius: 12px;
+    border-left: 4px solid var(--secondary-blue);
+}
+
+.skill-group h3 {
+    font-size: 14px;
+    color: var(--primary-blue);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.skill-group ul {
+    list-style-type: disc;
+    margin-left: 18px;
+}
+
+.skill-group ul li {
+    font-size: 13.5px;
+    color: var(--text-dark);
+    margin-bottom: 6px;
+    font-weight: 400;
+}
+
+.skill-group ul li:last-child {
+    margin-bottom: 0;
+}
+
+/* --- Phần Liên Kết Mạng Xã Hội --- */
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.social-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 20px;
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.social-item i {
+    font-size: 18px;
+    color: var(--secondary-blue);
+    width: 20px;
+    text-align: center;
+}
+
+.social-item:hover {
+    background: var(--primary-blue);
+    color: #ffffff;
+    border-color: var(--primary-blue);
+    transform: translateX(3px);
+}
+
+.social-item:hover i {
+    color: #ffffff;
+}
+
+/* --- Cấu hình Responsive cho Mobile --- */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    
+    .card-container {
+        width: 100%; /* Chiếm hết chiều ngang màn hình điện thoại */
+        border-radius: 15px;
+    }
+
+    .card-body {
+        padding: 75px 20px 30px 20px; /* Thu nhỏ padding trên mobile */
+    }
+
+    .skills-section {
+        grid-template-columns: 1fr; /* Chuyển từ 2 cột thành 1 cột dọc trên mobile */
+        gap: 12px;
+    }
+    
+    .name {
+        font-size: 21px;
+    }
+}
